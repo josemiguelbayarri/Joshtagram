@@ -1,5 +1,8 @@
 import React from 'react';
+import Nav from './componentes/Nav'
 
 export default function App() {
-  return <h1>¡Bienvenido al curso!</h1>;
+  return <div>
+    <Nav />
+  </div>
 }
