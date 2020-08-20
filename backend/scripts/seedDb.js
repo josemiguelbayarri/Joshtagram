@@ -2,7 +2,7 @@ const { Seeder } = require('mongo-seeding');
 const path = require('path');
 
 const config = {
-  database: 'mongodb://127.0.0.1:27017/clontagram',
+  database: 'mongodb://127.0.0.1:27017/joshtagram',
   dropDatabase: true
 };
 
@@ -15,7 +15,7 @@ const collections = seeder.readCollectionsFromPath(
 (async function() {
   try {
     await seeder.import(collections);
-    console.log('Data importada a la base de datos "clontagram" exitosamente');
+    console.log('Data importada a la base de datos "joshtagram" exitosamente');
   } catch (err) {
     console.log('Hubo un error llenando la base de datos:', err);
   }
