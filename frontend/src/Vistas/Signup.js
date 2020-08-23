@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import Main from "../Componentes/Main";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Main from '../Componentes/Main';
 import imagenSignup from '../imagenes/signup.png';
 
-export default function Signup() {
+export default function Signup({ signup, mostrarError }) {
   const [usuario, setUsuario] = useState({
-    email: 'josemiguelbayarri@gmail.com',
-    username: 'rickitan',
-    password: '123',
+    email: '',
+    username: '',
+    password: '',
     bio: '',
     nombre: ''
   });
@@ -18,6 +19,18 @@ export default function Signup() {
     });
   }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      await signup(usuario);
+    } catch (error) {
+      mostrarError(error.response.data);
+      console.log(error);
+    }
+
+  }
+
   return (
     <Main center={true}>
       <div className="Signup">
@@ -27,7 +40,7 @@ export default function Signup() {
           <p className="FormContainer__info">
             Regístrate para ver el clon de Instagram
           </p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input 
             type="email" 
             name="email" 
@@ -80,7 +93,7 @@ export default function Signup() {
             />
             <button className="Form__submit" type="submit">Sign up</button>
             <p className="FormContainer__info">
-              Ya tienes cuenta? <a href="/login">Login</a>
+              Ya tienes cuenta? <Link to="/login">Login</Link>
             </p>
           </form>
         </div>
