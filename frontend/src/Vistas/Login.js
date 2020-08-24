@@ -4,14 +4,14 @@ import Main from '../Componentes/Main';
 
 export default function Login({ login, mostrarError }) {
   const [emailYPassword, setEmailYPassword] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: ''
   });
 
   function handleInputChange(e) {
     setEmailYPassword({
       ...emailYPassword,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   }
 
@@ -29,7 +29,7 @@ export default function Login({ login, mostrarError }) {
   return (
     <Main center>
       <div className="FormContainer">
-        <h1 className="Form__titulo">Joshtagram</h1>
+        <h1 className="Form__titulo">Clontagram</h1>
         <div>
           <form onSubmit={handleSubmit}>
             <input
