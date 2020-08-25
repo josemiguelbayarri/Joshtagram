@@ -29,7 +29,7 @@ export default function Login({ login, mostrarError }) {
   return (
     <Main center>
       <div className="FormContainer">
-        <h1 className="Form__titulo">Clontagram</h1>
+        <h1 className="Form__titulo">Joshtagram</h1>
         <div>
           <form onSubmit={handleSubmit}>
             <input
