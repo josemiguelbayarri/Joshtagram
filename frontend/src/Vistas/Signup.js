@@ -35,7 +35,7 @@ export default function Signup({ signup, mostrarError }) {
       <div className="Signup">
         <img src={imagenSignup} alt="" className="Signup__img" />
         <div className="FormContainer">
-          <h1 className="Form__titulo">Clontagram</h1>
+          <h1 className="Form__titulo">Joshtagram</h1>
           <p className="FormContainer__info">
             Regístrate para que veas el clon de Instagram
           </p>

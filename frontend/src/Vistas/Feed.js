@@ -120,7 +120,7 @@ function NoSiguesANadie() {
       </p>
       <div className="text-center">
         <Link to="/explore" className="NoSiguesANadie__boton">
-          Explora Clontagram
+          Explora Joshtagram
         </Link>
       </div>
     </div>
