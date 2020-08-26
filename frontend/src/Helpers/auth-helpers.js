@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const TOKEN_KEY = 'CLONTAGRAM_TOKEN';
+const TOKEN_KEY = 'JOSHTAGRAM_TOKEN';
 
 export function setToken(token) {
   localStorage.setItem(TOKEN_KEY, token);
