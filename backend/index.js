@@ -17,12 +17,16 @@ const passport = require('passport');
 passport.use(authJWT);
 
 // MongoDB -> NoSQL -> No hay tablas, sino colecciones de documentos
-mongoose.connect(process.env.MONGODB_URI, {
-  // Estos settings apagan warnings de mongoose
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+mongoose.connect(
+  "mongodb+srv://admin:1234@cluster0-al8op.mongodb.net/JOSHTAGRAM?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: true,
+  }
+).then(() => console.log("Conectado a MongoDB."))
+.catch(console.error);
 mongoose.connection.on('error', () => {
   logger.error('Falló la conexión a mongodb');
   process.exit(1);

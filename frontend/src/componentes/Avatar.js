@@ -5,20 +5,20 @@ import stringToColor from 'string-to-color';
 export default function Avatar({ usuario }) {
   return (
     <div className="Avatar">
-      <ImagenAvatar usuario={usuario} />
+      <ImagenAvatar usuario={usuario} /> {/* le pasamos la imagen definida abajo */}
 
-      <Link to={`/perfil/${usuario.username}`}>
+      <Link to={`/perfil/${usuario.username}`}> {/* el avatar apunta al perfil del usuario */}
         <h2>{usuario.username}</h2>
       </Link>
     </div>
   );
 }
 
-export function ImagenAvatar({ usuario }) {
+export function ImagenAvatar({ usuario }) {//le pasamos la propiedad usuario
   const style = {
-    backgroundImagen: usuario.imagen ? `url(${usuario.imagen})` : null,
-    backgroundColor: stringToColor(usuario.username)
+    backgroundImagen: usuario.imagen ? `url(${usuario.imagen})` : null,//si el usuario tiene una imagen utiliza la imagen del usuario y si no es asi es null
+    backgroundColor: stringToColor(usuario.username)//esta funcion se encarga de mostrar un color aleatorio para avatar de usuario
   };
 
-  return <div className="Avatar__img" style={style} />;
+  return <div className="Avatar__img" style={style} />;//la vista de la imagen de avatar
 }
